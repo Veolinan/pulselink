@@ -4,6 +4,7 @@ import { supabase } from '@/lib/supabase'
 import TopBar from './TopBar'
 import MobileNav from './MobileNav'
 import DesktopNav from './DesktopNav'
+import { Analytics } from "@vercel/analytics/next"
 
 type Role = 'donor' | 'partner' | 'coordinator' | 'admin'
 
