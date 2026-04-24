@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #FAF7F2;
+    --paper-2: #F3EEE3;
+    --ink: #1A1612;
+    --ink-2: #4A4540;
+    --ink-3: #8E8A83;
+    --line: #E7E1D6;
+    --red: #B8241A;
+    --red-light: #F5EAE9;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background: var(--paper);
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--red-light);
+    color: var(--red);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .font-serif { font-family: var(--font-fraunces), Georgia, serif; }
+  .font-sans { font-family: var(--font-geist), system-ui, sans-serif; }
+  .font-mono { font-family: var(--font-geist-mono), monospace; }
+
+  .bg-paper { background: var(--paper); }
+  .bg-paper-2 { background: var(--paper-2); }
+  .bg-ink { background: var(--ink); }
+  .bg-red-brand { background: var(--red); }
+  .bg-red-light { background: var(--red-light); }
+
+  .text-ink { color: var(--ink); }
+  .text-ink-2 { color: var(--ink-2); }
+  .text-ink-3 { color: var(--ink-3); }
+  .text-red-brand { color: var(--red); }
+
+  .border-line { border-color: var(--line); }
+
+  .editorial-heading {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .label-caps {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
   }
 }
