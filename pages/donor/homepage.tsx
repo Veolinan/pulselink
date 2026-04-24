@@ -45,9 +45,9 @@ function getBadgeDef(badge: Badge): BadgeDef {
 
 function greeting() {
   const h = new Date().getHours()
-  if (h < 12) return 'Habari asubuhi'
-  if (h < 17) return 'Habari mchana'
-  return 'Habari jioni'
+  if (h < 12) return 'Habari ya asubuhi'
+  if (h < 17) return 'Habari ya mchana'
+  return 'Habari ya jioni'
 }
 
 export default function Homepage() {
